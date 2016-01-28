@@ -1,32 +1,60 @@
+<header>
+  <img id='logo-pic' src="https://image.freepik.com/free-vector/palm-trees-on-desert-island_23-2147494090.jpg" alt="desert island logo">
+  <h4 id='logo'>MyTravels</h4>
+</header>
+
 <div class="container">
+
   <div ng-controller="main" class="trips-section">
+    <!-- Form for trip creation -->
     <div class="row">
-      <div class="twelve columns">
-        <form ng-submit="createTrip()">
+      <form ng-submit="createTrip()">
+        <div class="four columns">
           <label for="">Place Name</label>
           <input type="text" ng-model="newTrip.place">
+        </div>
+        <div class="four columns">
           <label for="">Image URL</label>
           <input type="text" ng-model="newTrip.url">
+        </div>
+        <div class="two columns">
           <label for="">Been There</label>
           <input type="radio" ng-model="newTrip.visited" ng-click="radioClicked = 1" value=true>
+        </div>
+        <div class="two columns">
           <label for="">Wanna Go</label>
           <input type="radio" ng-model="newTrip.visited" ng-click="radioClicked = 0" value=false>
-          <div ng-show="radioClicked === 1">
+        </div>
+      </div>
+      <!-- Display if past trip -->
+      <div class="row" ng-show="radioClicked === 1">
+        <div class="offset-by-two four columns">
             <label for="">When Did You Go?</label>
             <input type="text" ng-model="newTrip.date" placeholder="e.g August 2005, Winter 2008">
-            <label for="">Memories</label>
-            <textarea ng-model="newTrip.memories" rows="8" cols="40" placeholder="e.g Ate a sno cone"></textarea>
-          </div>
-          <div ng-show="radioClicked === 0">
-            <label for="">When Would You Go?</label>
-            <input type="text" ng-model="newTrip.date" placeholder="e.g Summer 2016, Within 5 years">
-            <label for="">Plans</label>
-            <textarea ng-model="newTrip.plans" rows="8" cols="40" placeholder="e.g Eat many sno cones"></textarea>
-          </div>
-          <button class="button-primary" type="submit">Submit</button>
-        </form>
+        </div>
+        <div class="four columns">
+          <label for="">Memories</label>
+          <textarea ng-model="newTrip.memories" rows="8" cols="40" placeholder="e.g Ate a sno cone"></textarea>
+        </div>
       </div>
-    </div>
+      <!-- Display if planned trip -->
+      <div class="row" ng-show="radioClicked === 0">
+        <div class="offset-by-two four columns">
+            <label for="">When Will You Go?</label>
+            <input type="text" ng-model="newTrip.date" placeholder="e.g Summer 2017, Before 2020">
+        </div>
+        <div class="four columns">
+          <label for="">Plans</label>
+          <textarea ng-model="newTrip.plans" rows="8" cols="40" placeholder="e.g Eat a sno cone"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="offset-by-four four columns">
+          <button class="button-primary" type="submit">Submit</button>
+        </div>
+      </div>
+      </form>
+
     <div class="row">
       <div class="six columns">
         <ul>
