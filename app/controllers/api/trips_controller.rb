@@ -6,6 +6,8 @@ class Api::TripsController < ApplicationController
   end
 
   def create
+    new_trip = Trip.create( trip_params )
+    render json: new_trip
   end
 
   private

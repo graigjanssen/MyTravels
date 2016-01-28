@@ -1,2 +1,14 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="container">
+  <div ng-controller="main" class="row">
+    <div ng-repeat="trip in pastTrips" class="six columns">
+      <h3>{{trip.place}}</h3>
+      <h4>{{trip.date}}</h4>
+      <h5>{{trip.memories}}</h5>
+    </div>
+    <div ng-repeat="trip in plannedTrips" class="six columns">
+      <h3>{{trip.place}}</h3>
+      <h4>{{trip.date}}</h4>
+      <h5>{{trip.plans}}</h5>
+    </div>
+  </div>
+</div>
