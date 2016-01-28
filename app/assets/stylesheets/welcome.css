@@ -1,12 +1,17 @@
 body {
-  background-color: rgb(201, 183, 183);
+  background-color: rgb(220, 205, 205);
+}
+
+.center {
+  text-align: center;
 }
 
 header {
   width: 100%;
   background-color: #1a2b20;
-  color: #e9e4de;
-  height: 56px;
+  color: rgb(255,250,250);
+  height: 60px;
+  border-bottom: 2px solid #7c9384;
 }
 
 #logo-pic {
@@ -17,7 +22,17 @@ header {
   border-radius: 8px;
 }
 
+.date-field {
+  padding-top: 16px;
+}
+
+.submit-row {
+  text-align: center;
+}
+
 .trip-pic {
-  width: 95%;
+  width: 90%;
   margin: 8px auto;
+  border: 1px solid #1a2b20;
+  border-radius: 3px;
 }

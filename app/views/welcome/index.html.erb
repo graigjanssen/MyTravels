@@ -9,47 +9,47 @@
     <!-- Form for trip creation -->
     <div class="row">
       <form ng-submit="createTrip()">
-        <div class="four columns">
+        <div class="offset-by-one three columns">
           <label for="">Place Name</label>
           <input type="text" ng-model="newTrip.place">
         </div>
-        <div class="four columns">
+        <div class="three columns">
           <label for="">Image URL</label>
           <input type="text" ng-model="newTrip.url">
         </div>
-        <div class="two columns">
+        <div class="two columns center">
           <label for="">Been There</label>
           <input type="radio" ng-model="newTrip.visited" ng-click="radioClicked = 1" value=true>
         </div>
-        <div class="two columns">
+        <div class="two columns center">
           <label for="">Wanna Go</label>
           <input type="radio" ng-model="newTrip.visited" ng-click="radioClicked = 0" value=false>
         </div>
       </div>
       <!-- Display if past trip -->
       <div class="row" ng-show="radioClicked === 1">
-        <div class="offset-by-two four columns">
+        <div class="offset-by-two four columns date-field">
             <label for="">When Did You Go?</label>
             <input type="text" ng-model="newTrip.date" placeholder="e.g August 2005, Winter 2008">
         </div>
         <div class="four columns">
           <label for="">Memories</label>
-          <textarea ng-model="newTrip.memories" rows="8" cols="40" placeholder="e.g Ate a sno cone"></textarea>
+          <textarea ng-model="newTrip.memories" rows="8" cols="32" placeholder="e.g Ate a sno cone"></textarea>
         </div>
       </div>
       <!-- Display if planned trip -->
       <div class="row" ng-show="radioClicked === 0">
-        <div class="offset-by-two four columns">
+        <div class="offset-by-two four columns date-field">
             <label for="">When Will You Go?</label>
             <input type="text" ng-model="newTrip.date" placeholder="e.g Summer 2017, Before 2020">
         </div>
         <div class="four columns">
           <label for="">Plans</label>
-          <textarea ng-model="newTrip.plans" rows="8" cols="40" placeholder="e.g Eat a sno cone"></textarea>
+          <textarea ng-model="newTrip.plans" rows="8" cols="32" placeholder="e.g Eat a sno cone"></textarea>
         </div>
       </div>
       <div class="row">
-        <div class="offset-by-four four columns">
+        <div class="offset-by-four four columns submit-row">
           <button class="button-primary" type="submit">Submit</button>
         </div>
       </div>
@@ -57,21 +57,21 @@
 
     <div class="row">
       <div class="six columns">
-        <h3 class="trip-column-title">Past Trips</h3>
+        <h3 class="trip-column-title center">Past Trips</h3>
         <div class='trip-box' ng-repeat="trip in pastTrips">
           <img class='trip-pic' ng-src="{{ trip.url }}" alt=""/>
-          <h4>{{trip.place}}</h4>
-          <h5>{{trip.date}}</h5>
+          <h4 class='center'>{{trip.place}}</h4>
+          <h6>When: {{trip.date}}</h6>
           <h6>{{trip.memories}}</h6>
           <a href="#" ng-click="deleteTrip(trip.id)">Delete</a>
         </div>
       </div>
       <div class="six columns">
-        <h3 class="trip-column-title">Planned Trips</h3>
+        <h3 class="trip-column-title center">Planned Trips</h3>
         <div class='trip-box' ng-repeat="trip in plannedTrips">
           <img class='trip-pic' ng-src="{{ trip.url }}" alt=""/>
-          <h4>{{trip.place}}</h4>
-          <h5>{{trip.date}}</h5>
+          <h4 class='center'>{{trip.place}}</h4>
+          <h6>When: {{trip.date}}</h6>
           <h6>{{trip.plans}}</h6>
           <a href="#" ng-click="deleteTrip(trip.id)">Delete</a>
         </div>
