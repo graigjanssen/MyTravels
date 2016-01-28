@@ -1,14 +1,51 @@
 <div class="container">
-  <div ng-controller="main" class="row">
-    <div ng-repeat="trip in pastTrips" class="six columns">
-      <h3>{{trip.place}}</h3>
-      <h4>{{trip.date}}</h4>
-      <h5>{{trip.memories}}</h5>
+  <div ng-controller="main" class="trips-section">
+    <div class="row">
+      <div class="twelve columns">
+        <form ng-submit="createTrip()">
+          <label for="">Place Name</label>
+          <input type="text" ng-model="newTrip.place">
+          <label for="">Image URL</label>
+          <input type="text" ng-model="newTrip.url">
+          <label for="">Been There</label>
+          <input type="radio" ng-model="newTrip.visited" ng-click="radioClicked = 1" value=true>
+          <label for="">Wanna Go</label>
+          <input type="radio" ng-model="newTrip.visited" ng-click="radioClicked = 0" value=false>
+          <div ng-show="radioClicked === 1">
+            <label for="">When Did You Go?</label>
+            <input type="text" ng-model="newTrip.date" placeholder="e.g August 2005, Winter 2008">
+            <label for="">Memories</label>
+            <textarea ng-model="newTrip.memories" rows="8" cols="40" placeholder="e.g Ate a sno cone"></textarea>
+          </div>
+          <div ng-show="radioClicked === 0">
+            <label for="">When Would You Go?</label>
+            <input type="text" ng-model="newTrip.date" placeholder="e.g Summer 2016, Within 5 years">
+            <label for="">Plans</label>
+            <textarea ng-model="newTrip.plans" rows="8" cols="40" placeholder="e.g Eat many sno cones"></textarea>
+          </div>
+          <button class="button-primary" type="submit">Submit</button>
+        </form>
+      </div>
     </div>
-    <div ng-repeat="trip in plannedTrips" class="six columns">
-      <h3>{{trip.place}}</h3>
-      <h4>{{trip.date}}</h4>
-      <h5>{{trip.plans}}</h5>
+    <div class="row">
+      <div class="six columns">
+        <ul>
+          <li ng-repeat="trip in pastTrips">
+            <h4>{{trip.place}}</h4>
+            <h5>{{trip.date}}</h5>
+            <h6>{{trip.memories}}</h6>
+          </li>
+        </ul>
+      </div>
+      <div class="six columns">
+        <ul>
+          <li ng-repeat="trip in plannedTrips">
+            <h4>{{trip.place}}</h4>
+            <h5>{{trip.date}}</h5>
+            <h6>{{trip.plans}}</h6>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
