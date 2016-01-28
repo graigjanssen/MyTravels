@@ -57,24 +57,24 @@
 
     <div class="row">
       <div class="six columns">
-        <ul>
-          <li ng-repeat="trip in pastTrips">
-            <h4>{{trip.place}}</h4>
-            <h5>{{trip.date}}</h5>
-            <h6>{{trip.memories}}</h6>
-            <a href="#" ng-click="deleteTrip(trip.id)">Delete</a>
-          </li>
-        </ul>
+        <h3 class="trip-column-title">Past Trips</h3>
+        <div class='trip-box' ng-repeat="trip in pastTrips">
+          <img class='trip-pic' ng-src="{{ trip.url }}" alt=""/>
+          <h4>{{trip.place}}</h4>
+          <h5>{{trip.date}}</h5>
+          <h6>{{trip.memories}}</h6>
+          <a href="#" ng-click="deleteTrip(trip.id)">Delete</a>
+        </div>
       </div>
       <div class="six columns">
-        <ul>
-          <li ng-repeat="trip in plannedTrips">
-            <h4>{{trip.place}}</h4>
-            <h5>{{trip.date}}</h5>
-            <h6>{{trip.plans}}</h6>
-            <a href="#" ng-click="deleteTrip(trip.id)">Delete</a>
-          </li>
-        </ul>
+        <h3 class="trip-column-title">Planned Trips</h3>
+        <div class='trip-box' ng-repeat="trip in plannedTrips">
+          <img class='trip-pic' ng-src="{{ trip.url }}" alt=""/>
+          <h4>{{trip.place}}</h4>
+          <h5>{{trip.date}}</h5>
+          <h6>{{trip.plans}}</h6>
+          <a href="#" ng-click="deleteTrip(trip.id)">Delete</a>
+        </div>
       </div>
     </div>
   </div>
