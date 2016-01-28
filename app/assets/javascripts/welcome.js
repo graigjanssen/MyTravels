@@ -1,8 +1,6 @@
 var app = angular.module('myTravels', []);
 
 app.controller('main', ['$scope', '$http', function($scope, $http){
-  $scope.pastTrips = [];
-  $scope.plannedTrips = [];
 
   $scope.radioClicked = null;
 
@@ -14,22 +12,45 @@ app.controller('main', ['$scope', '$http', function($scope, $http){
     }
   }
 
-  //Get all trips, sort into past and planned
-  $http.get('api/trips').then(function(response){
-    var allTrips = response.data.trips;
-    allTrips.forEach(function(trip){
-      sortTrip(trip);
+  // Get all trips, sort into past and planned
+
+  $scope.updateTrips = function(){
+    $scope.pastTrips = [];
+    $scope.plannedTrips =[];
+
+    $http.get('api/trips').then(function(response){
+      var allTrips = response.data.trips;
+      allTrips.forEach(function(trip){
+        sortTrip(trip);
+      });
     });
-  });
+  };
+
+  // Trip Creation
 
   $scope.newTrip = {};
 
   $scope.createTrip = function(){
-    $http.post('api/trips', { trip: $scope.newTrip }).then(function(response){
-      var trip = response.data;
-      sortTrip(trip);
+    $http.post('api/trips', { trip: $scope.newTrip }).then(function(){
+      $scope.updateTrips();
       $scope.newTrip = {};
     });
   };
+
+  // Trip Deletion
+
+  $scope.deleteTrip = function( id ){
+    $http.delete('api/trips/' + id).then(function(response){
+      $scope.updateTrips();
+    });
+  };
+
+  // On page load...
+
+  function init() {
+    $scope.updateTrips();
+  }
+
+  init();
 
 }]);

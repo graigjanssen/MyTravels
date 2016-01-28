@@ -10,6 +10,11 @@ class Api::TripsController < ApplicationController
     render json: new_trip
   end
 
+  def destroy
+    Trip.destroy( params[:id] )
+    render json: {description: 'success'}
+  end
+
   private
 
   def trip_params
