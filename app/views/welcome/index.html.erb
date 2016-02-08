@@ -18,11 +18,11 @@
           <input type="text" ng-model="newTrip.url">
         </div>
         <div class="two columns center">
-          <label for="">Been There</label>
+          <label for="">Been There?</label>
           <input type="radio" ng-model="newTrip.visited" ng-click="radioClicked = 1" value=true>
         </div>
         <div class="two columns center">
-          <label for="">Wanna Go</label>
+          <label for="">Wanna Go!</label>
           <input type="radio" ng-model="newTrip.visited" ng-click="radioClicked = 0" value=false>
         </div>
       </div>
@@ -50,7 +50,7 @@
       </div>
       <div class="row">
         <div class="offset-by-four four columns submit-row">
-          <button class="button-primary" type="submit">Submit</button>
+          <button id="trip-form-submit" class="button-primary" type="submit">Add Trip</button>
         </div>
       </div>
       </form>
@@ -60,20 +60,31 @@
         <h3 class="trip-column-title center">Past Trips</h3>
         <div class='trip-box' ng-repeat="trip in pastTrips">
           <img class='trip-pic' ng-src="{{ trip.url }}" alt=""/>
-          <h4 class='place-name center'>{{trip.place}}</h4>
-          <h6>When: {{trip.date}}</h6>
-          <h6>{{trip.memories}}</h6>
-          <a href="#" ng-click="deleteTrip(trip.id)">Delete</a>
+          <div class="trip-info">
+            <h4 class='place-name center'>{{trip.place}}</h4>
+            <h6 class="trip-heading">When</h6>
+            <h6 class="trip-text">{{trip.date}}</h6>
+            <h6 class="trip-heading">Memories</h6>
+            <h6 class="trip-text">{{trip.memories}}</h6>
+            <div class="trip-btn">
+              <button id="btn-delete" class="button-primary" ng-click="deleteTrip(trip.id)">Delete</button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="six columns">
         <h3 class="trip-column-title center">Planned Trips</h3>
         <div class='trip-box' ng-repeat="trip in plannedTrips">
           <img class='trip-pic' ng-src="{{ trip.url }}" alt=""/>
-          <h4 class='place-name center'>{{trip.place}}</h4>
-          <h6>When: {{trip.date}}</h6>
-          <h6>{{trip.plans}}</h6>
-          <a href="#" ng-click="deleteTrip(trip.id)">Delete</a>
+          <div class="trip-info">
+            <h4 class='place-name center'>{{trip.place}}</h4>
+            <h6 class="trip-heading">When</h6>
+            <h6 class="trip-text">{{trip.date}}</h6>
+            <h6 class="trip-heading">Plans</h6>
+            <h6 class="trip-text">{{trip.plans}}</h6>
+            <div class="trip-btn">
+              <button id="btn-delete" class="button-primary" ng-click="deleteTrip(trip.id)">Delete</button>
+            </div>
         </div>
       </div>
     </div>
