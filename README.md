@@ -39,3 +39,37 @@ function sortTrip(trip){
   }
 }
 ```
+
+###Two Form Paths
+
+The create trip form changes depending on whether the destination is in the past or lies in the future.
+
+```html
+<div class="two columns center">
+  <label for="">Been There?</label>
+  <input type="radio" ng-model="newTrip.visited" ng-click="radioClicked = 1" value=true>
+</div>
+<div class="two columns center">
+  <label for="">Wanna Go!</label>
+  <input type="radio" ng-model="newTrip.visited" ng-click="radioClicked = 0" value=false>
+</div>
+</div>
+<!-- Display if past trip -->
+<div class="row" ng-show="radioClicked === 1">
+<div class="offset-by-two four columns date-field">
+    <label for="">When Did You Go?</label>
+    <input type="text" ng-model="newTrip.date" placeholder="e.g August 2005, Winter 2008">
+</div>
+<div class="four columns">
+  <label for="">Memories</label>
+  <textarea ng-model="newTrip.memories" rows="8" cols="32" placeholder="e.g Ate a sno cone"></textarea>
+</div>
+</div>
+```
+In this example, the Angular directive `ng-click` is used to set `$scope.radioClicked` to 1 or 0.  That value is then used by  `ng-show` in the following section to display the appropriate fields.  
+
+##Additional Features Planned
+Since this is the first version of the app, there are many ways in which the application could be more robust, including...
+- Making use of an external API to automatically assign a picture and other relevant data to each destination.
+- User authentication to allow users to save their personalized page.
+- New layout that incorporates an 'slider' so future and past sections are stacked vertically with trips scrolling horizontally.
