@@ -55,12 +55,12 @@
       </div>
       </form>
 
-    <div class="row">
+    <div class="row trip-section">
       <div class="six columns">
         <h3 class="trip-column-title center">Past Trips</h3>
         <div class='trip-box' ng-repeat="trip in pastTrips">
           <img class='trip-pic' ng-src="{{ trip.url }}" alt=""/>
-          <h4 class='center'>{{trip.place}}</h4>
+          <h4 class='place-name center'>{{trip.place}}</h4>
           <h6>When: {{trip.date}}</h6>
           <h6>{{trip.memories}}</h6>
           <a href="#" ng-click="deleteTrip(trip.id)">Delete</a>
@@ -70,7 +70,7 @@
         <h3 class="trip-column-title center">Planned Trips</h3>
         <div class='trip-box' ng-repeat="trip in plannedTrips">
           <img class='trip-pic' ng-src="{{ trip.url }}" alt=""/>
-          <h4 class='center'>{{trip.place}}</h4>
+          <h4 class='place-name center'>{{trip.place}}</h4>
           <h6>When: {{trip.date}}</h6>
           <h6>{{trip.plans}}</h6>
           <a href="#" ng-click="deleteTrip(trip.id)">Delete</a>
