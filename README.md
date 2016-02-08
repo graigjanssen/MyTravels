@@ -72,4 +72,4 @@ In this example, the Angular directive `ng-click` is used to set `$scope.radioCl
 Since this is the first version of the app, there are many ways in which the application could be more robust, including...
 - Making use of an external API to automatically assign a picture and other relevant data to each destination.
 - User authentication to allow users to save their personalized page.
-- New layout that incorporates an 'slider' so future and past sections are stacked vertically with trips scrolling horizontally.
+- New layout that incorporates a 'slider' so future and past sections are stacked vertically with trips scrolling horizontally.
