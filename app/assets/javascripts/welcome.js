@@ -1,4 +1,4 @@
-var app = angular.module('myTravels', []);
+var app = angular.module('myTravels', ['angular-carousel']);
 
 app.controller('main', ['$scope', '$http', function($scope, $http){
 

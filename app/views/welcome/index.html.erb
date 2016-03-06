@@ -56,36 +56,53 @@
       </form>
 
     <div class="row trip-section">
-      <div class="six columns">
+      <div class="twelve columns">
         <h3 class="trip-column-title center">Past Trips</h3>
-        <div class='trip-box' ng-repeat="trip in pastTrips">
-          <img class='trip-pic' ng-src="{{ trip.url }}" alt=""/>
-          <div class="trip-info">
-            <h4 class='place-name center'>{{trip.place}}</h4>
-            <h6 class="trip-heading">When</h6>
-            <h6 class="trip-text">{{trip.date}}</h6>
-            <h6 class="trip-heading">Memories</h6>
-            <h6 class="trip-text">{{trip.memories}}</h6>
-            <div class="trip-btn">
-              <button id="btn-delete" class="button-primary" ng-click="deleteTrip(trip.id)">Delete</button>
+        <div rn-carousel rn-carousel-controls class="slider">
+          <div class='trip-box' ng-repeat="trip in pastTrips">
+            <img class='trip-pic' ng-src="{{ trip.url }}" alt=""/>
+            <div class="trip-info">
+              <h4 class='place-name center'>{{trip.place}}</h4>
+              <h6 class="trip-heading">When</h6>
+              <h6 class="trip-text">{{trip.date}}</h6>
+              <h6 class="trip-heading">Memories</h6>
+              <h6 class="trip-text">{{trip.memories}}</h6>
+              <div class="trip-btn">
+                <button id="btn-delete" class="button-primary" ng-click="deleteTrip(trip.id)">Delete</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="six columns">
+    </div>
+    <div class="row trip-section">
+      <div class="twelve columns">
         <h3 class="trip-column-title center">Planned Trips</h3>
-        <div class='trip-box' ng-repeat="trip in plannedTrips">
-          <img class='trip-pic' ng-src="{{ trip.url }}" alt=""/>
-          <div class="trip-info">
-            <h4 class='place-name center'>{{trip.place}}</h4>
-            <h6 class="trip-heading">When</h6>
-            <h6 class="trip-text">{{trip.date}}</h6>
-            <h6 class="trip-heading">Plans</h6>
-            <h6 class="trip-text">{{trip.plans}}</h6>
-            <div class="trip-btn">
-              <button id="btn-delete" class="button-primary" ng-click="deleteTrip(trip.id)">Delete</button>
+        <div rn-carousel rn-carousel-controls class="slider">
+          <div class='trip-box' ng-repeat="trip in plannedTrips">
+            <img class='trip-pic' ng-src="{{ trip.url }}" alt=""/>
+            <div class="trip-info">
+              <h4 class='place-name center'>{{trip.place}}</h4>
+              <h6 class="trip-heading">When</h6>
+              <h6 class="trip-text">{{trip.date}}</h6>
+              <h6 class="trip-heading">Plans</h6>
+              <h6 class="trip-text">{{trip.plans}}</h6>
+              <div class="trip-btn">
+                <button id="btn-delete" class="button-primary" ng-click="deleteTrip(trip.id)">Delete</button>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="six columns">
+        <ul rn-carousel rn-carousel-controls>
+          <li>One</li>
+          <li>Two</li>
+          <li>Three</li>
+          <li>Four</li>
+        </ul>
       </div>
     </div>
   </div>
