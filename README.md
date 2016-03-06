@@ -8,7 +8,7 @@ MyTravels is a fun application that lets the user manage and view their past and
 
 MyTravels is built on a Ruby on Rails back end and Angular.js front end.  
 - Through ActiveRecord, the back end controller interacts with a PostgreSQL database to create and delete trips for the user.  
-- The Angular.js framework allows the application to run on a single page without the need for refreshing the page.
+- The Angular.js framework allows the application to run on a single page without the need for refreshing.  Angular also streamlines the rendering process and allows for conditional form fields and sorting trips.
 - Skeleton CSS is used to align the content within a grid layout, also making the app more mobile friendly.   
 
 ##Example Code
