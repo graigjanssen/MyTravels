@@ -55,11 +55,12 @@
       </div>
       </form>
 
-    <div class="row trip-section">
-      <div class="twelve columns">
-        <h3 class="trip-column-title center">Past Trips</h3>
-        <div rn-carousel rn-carousel-controls class="slider">
-          <div class='trip-box' ng-repeat="trip in pastTrips">
+<!-- PAST TRIPS -->
+    <div class="trip-section">
+      <h3 class="trip-column-title center">Past Trips</h3>
+      <div class="slider">
+        <div class='slides'>
+          <div class="trip-box" ng-repeat="trip in pastTrips">
             <img class='trip-pic' ng-src="{{ trip.url }}" alt=""/>
             <div class="trip-info">
               <h4 class='place-name center'>{{trip.place}}</h4>
@@ -75,11 +76,13 @@
         </div>
       </div>
     </div>
-    <div class="row trip-section">
-      <div class="twelve columns">
-        <h3 class="trip-column-title center">Planned Trips</h3>
-        <div rn-carousel rn-carousel-controls class="slider">
-          <div class='trip-box' ng-repeat="trip in plannedTrips">
+
+<!-- PLANNED TRIPS -->
+    <div class="trip-section">
+      <h3 class="trip-column-title center">Planned Trips</h3>
+      <div class="slider">
+        <div class='slides'>
+          <div class="trip-box" ng-repeat="trip in plannedTrips">
             <img class='trip-pic' ng-src="{{ trip.url }}" alt=""/>
             <div class="trip-info">
               <h4 class='place-name center'>{{trip.place}}</h4>
@@ -93,16 +96,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="six columns">
-        <ul rn-carousel rn-carousel-controls>
-          <li>One</li>
-          <li>Two</li>
-          <li>Three</li>
-          <li>Four</li>
-        </ul>
       </div>
     </div>
   </div>
