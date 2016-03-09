@@ -63,6 +63,9 @@ header {
   margin: 1rem auto 3rem auto;
 }
  /*SLIDER COMPONENTS*/
+.slider-buttons {
+  text-align: center;
+}
 .slider {
   width: 720px;
   height: 680px;
@@ -71,10 +74,8 @@ header {
 }
 .slides {
   display: block;
-  /*width: 1440px;*/
+  width: 1440px;
   height: 680px;
-  margin: 0;
-  margin-left: 0;
   padding: 0;
 }
 .trip-box {
