@@ -63,7 +63,7 @@
         <button class="next-button slider-button button-primary">></button>
       </div>
       <div class="slider">
-        <div class='slides'>
+        <div id="past-trips" class='slides'>
           <div class="trip-box" ng-repeat="trip in pastTrips">
             <img class='trip-pic' ng-src="{{ trip.url }}" alt=""/>
             <div class="trip-info">
@@ -89,7 +89,7 @@
         <button class="next-button slider-button button-primary">></button>
       </div>
       <div class="slider">
-        <div class='slides'>
+        <div id="planned-trips" class='slides'>
           <div class="trip-box" ng-repeat="trip in plannedTrips">
             <img class='trip-pic' ng-src="{{ trip.url }}" alt=""/>
             <div class="trip-info">
@@ -105,6 +105,13 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="parent">
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
     </div>
   </div>
 </div>

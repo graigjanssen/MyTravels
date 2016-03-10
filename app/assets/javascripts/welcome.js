@@ -16,13 +16,16 @@ app.controller('main', ['$scope', '$http', function($scope, $http){
 
   $scope.updateTrips = function(){
     $scope.pastTrips = [];
-    $scope.plannedTrips =[];
+    $scope.plannedTrips = [];
 
     $http.get('api/trips').then(function(response){
       var allTrips = response.data.trips;
       allTrips.forEach(function(trip){
         sortTrip(trip);
       });
+      // Once trips are sorted, check how many are in each category, use to set width of each slider
+      var tripTotals = [$scope.pastTrips.length, $scope.plannedTrips.length];
+      setSliderWidths(tripTotals);
     });
   };
 
@@ -44,6 +47,13 @@ app.controller('main', ['$scope', '$http', function($scope, $http){
       $scope.updateTrips();
     });
   };
+
+  // Set Slider widths
+  function setSliderWidths(tripTotals){
+    for (var i = 0; i < tripTotals.length; i++) {
+      $($('.slides')[i]).css('width', ((tripTotals[i] * 720) + 'px'));
+    }
+  }
 
   // On page load...
 

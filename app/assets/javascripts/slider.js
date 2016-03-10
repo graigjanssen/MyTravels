@@ -6,11 +6,11 @@ function setSliderButtonListener(){
     if (buttonType === "prev-button"){
       $slides.animate({
         marginLeft: '+=720'
-      }, 500);
+      }, 350);
     } else if (buttonType === "next-button"){
       $slides.animate({
         marginLeft: '-=720'
-      }, 500);
+      }, 350);
     }
   });
 }
