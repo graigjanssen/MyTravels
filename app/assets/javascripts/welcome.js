@@ -55,6 +55,51 @@ app.controller('main', ['$scope', '$http', function($scope, $http){
     }
   }
 
+  //Animate Slider
+
+  $scope.animateSlider = function(e){
+    // Determines previous or next
+    var buttonType = e.target.classList[0];
+    // Matching slides element
+    var $slides = $(e.target.parentElement.nextElementSibling.firstElementChild);
+    var margin = parseInt($slides.css('marginLeft'));
+    console.log('current margin-left: ', margin);
+
+    if (buttonType === "prev-button"){
+      $slides.animate({
+        marginLeft: (margin + 720)
+      }, 350, function(){
+        updateButtons($slides);
+      });
+    } else if (buttonType === "next-button"){
+      $slides.animate({
+        marginLeft: (margin - 720)
+      }, 350, function(){
+        updateButtons($slides);
+      });
+    }
+  };
+  // Update buttons for a given slider
+  function updateButtons($slides){
+    var buttonsEl = $slides.get(0).parentElement.previousElementSibling;
+    var margin = (parseInt($slides.css('marginLeft')) * -1);
+    var width = parseInt($slides.css('width'));
+
+    var $prevButton = $(buttonsEl.children[0]);
+    var $nextButton = $(buttonsEl.children[1]);
+
+    if (margin === 0){
+      $prevButton.hide();
+      $nextButton.show();
+    } else if (width - margin === 720) {
+      $prevButton.show();
+      $nextButton.hide();
+    } else {
+      $prevButton.show();
+      $nextButton.show();
+    }
+  }
+
   // On page load...
 
   function init() {

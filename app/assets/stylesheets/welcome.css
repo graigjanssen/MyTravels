@@ -66,16 +66,22 @@ header {
 .slider-buttons {
   text-align: center;
 }
+.prev-button {
+  display: none;
+}
+
 .slider {
   width: 720px;
   height: 680px;
   margin: auto;
   overflow: hidden;
+  position: relative;
 }
 .slides {
   display: block;
   width: 1440px;
   height: 680px;
+  margin-left: 0px;
   padding: 0;
 }
 .trip-box {
